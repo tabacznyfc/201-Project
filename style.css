@@ -5,6 +5,7 @@ body {
 }
 #navMenu {
   display: none;
+  position: fixed;
 }
 
 #hamburger {
