@@ -87,6 +87,29 @@ for (var i = 0; i < 9; i++) {
   imgIds[i].addEventListener('click', handleTurn);
 }
 
+function addUp() {
+  var total = 0;
+  total += position[0];
+  total += position[1];
+  total += position[2];
+  total += position[3];
+  total += position[4];
+  total += position[5];
+  total += position[6];
+  total += position[7];
+  total += position[8];
+  return total;
+}
+
+function isTie() {
+  var total = addUp();
+  console.log('total = ' + total);
+  if (total >= 13) {
+    alert('It\'s a tie!');
+    reset();
+  }
+}
+
 function handleTurn(event) {
   console.log(currentTurn + '\'s turn.');
   if (position[event.target.id] === 1 ||
@@ -100,41 +123,32 @@ function handleTurn(event) {
     moveX.setAttribute('src', 'images/x.png');
     console.log(moveX);
 
-    if (checkWinX(position)) {
-      alert('X wins!');
-      reset();
-    }
-
-    if (checkWinO(position)) {
-      alert('O wins!');
-      reset();
-    }
-
     currentTurn = 'O';
   } else if (currentTurn === 'O') {
     position[event.target.id] = 2;
     var moveO = document.getElementById(event.target.id);
     moveO.setAttribute('src', 'images/o.png');
     console.log(moveO);
-    
-    if (checkWinO(position)) {
-      alert('O wins!');
-      reset();
-    }
-
-    if (checkWinX(position)) {
-      alert('X wins!');
-      reset();
-    }
-
     currentTurn = 'X';
   }
 
+  if (checkWinX(position)) {
+    window.setTimeout(alert('X wins!'), 100);
+    reset();
+  }
+
+  if (checkWinO(position)) {
+    window.setTimeout(alert('O wins!'), 100);
+    reset();
+  }
+
+  isTie();
   console.log(position);
 }
 
 function reset() {
   position = [];
+  player = 'X';
   for (var i = 0; i < 9; i++) {
     position.push(0);
   }
@@ -142,7 +156,7 @@ function reset() {
   for (i = 0; i < 9; i++) {
     var imgIds = [];
     imgIds[i] = document.getElementById(i);
-    imgIds[i].setAttribute('src', 'img/blank.jpeg');
+    imgIds[i].setAttribute('src', '');
   }
 }
 
