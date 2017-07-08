@@ -7,6 +7,10 @@ body {
   display: none;
 }
 
+#hamburger {
+  width: 32px;
+}
+
 .flex-container {
   display: flex;
   width: 100%;
