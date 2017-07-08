@@ -89,8 +89,11 @@ for (var i = 0; i < 9; i++) {
 
 function handleTurn(event) {
   console.log(currentTurn + '\'s turn.');
-  if (currentTurn === 'X') {
-    position[event.target.id]++;
+  if (position[event.target.id] === 1 ||
+      position[event.target.id] === 2) {
+    return;
+  } else if (currentTurn === 'X') {
+    position[event.target.id] = 1;
     console.log('event.target.id = ' + event.target.id);
     console.log('value of move = ' + position[event.target.id]);
     var moveX = document.getElementById(event.target.id);
