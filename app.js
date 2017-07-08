@@ -87,7 +87,7 @@ for (var i = 0; i < 9; i++) {
   imgIds[i].addEventListener('click', handleTurn);
 }
 
-function hadleTurn(event) {
+function handleTurn(event) {
   if (currentTurn == 'X') {
     position[event.target.id] = 1;
     var move = document.getElementById(event.target.id);
