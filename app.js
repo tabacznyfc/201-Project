@@ -87,6 +87,29 @@ for (var i = 0; i < 9; i++) {
   imgIds[i].addEventListener('click', handleTurn);
 }
 
+function addUp() {
+  var total = 0;
+  total += position[0];
+  total += position[1];
+  total += position[2];
+  total += position[3];
+  total += position[4];
+  total += position[5];
+  total += position[6];
+  total += position[7];
+  total += position[8];
+  return total;
+}
+
+function isTie() {
+  var total = addUp();
+  console.log('total = ' + total);
+  if (total >= 13) {
+    alert('It\'s a tie!');
+    reset();
+  }
+}
+
 function handleTurn(event) {
   console.log(currentTurn + '\'s turn.');
   if (position[event.target.id] === 1 ||
@@ -118,12 +141,14 @@ function handleTurn(event) {
     window.setTimeout(alert('O wins!'), 100);
     reset();
   }
-  
+
+  isTie();
   console.log(position);
 }
 
 function reset() {
   position = [];
+  player = 'X';
   for (var i = 0; i < 9; i++) {
     position.push(0);
   }
