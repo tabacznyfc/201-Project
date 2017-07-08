@@ -1,7 +1,11 @@
 body {
+  display: flex;
+  flex-direction: column;
   background-color: #11262E;
   color: white;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #navMenu {
   display: none;
@@ -14,13 +18,18 @@ body {
 
 .flex-container {
   display: flex;
+  align-items: center;
   height: 326px;
   max-width: 978px;
+  width: 90%;
   background-color: #F16949;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-box {
-  width: 316px;
+  max-width: 316px;
+  width: 32.5%;
   height: 316px;
   margin: 5px;
   background-color: #B0E1ED;
