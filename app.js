@@ -1,4 +1,4 @@
-var currentTurn = 'O';
+var currentTurn = 'X';
 
 var position = [];
 for (var i = 0; i < 9; i++) {
@@ -88,39 +88,49 @@ for (var i = 0; i < 9; i++) {
 }
 
 function handleTurn(event) {
-  if (currentTurn == 'X') {
+  console.log(currentTurn + '\'s turn.');
+  if (position[event.target.id] === 1 ||
+      position[event.target.id] === 2) {
+    return;
+  } else if (currentTurn === 'X') {
     position[event.target.id] = 1;
-    var move = document.getElementById(event.target.id);
-    move.setAttribute('src', 'img/x.jpeg');
+    console.log('event.target.id = ' + event.target.id);
+    console.log('value of move = ' + position[event.target.id]);
+    var moveX = document.getElementById(event.target.id);
+    moveX.setAttribute('src', 'images/x.png');
+    console.log(moveX);
+
+    if (checkWinX(position)) {
+      alert('X wins!');
+      reset();
+    }
+
+    if (checkWinO(position)) {
+      alert('O wins!');
+      reset();
+    }
+
     currentTurn = 'O';
-
-    if (checkWinX()) {
-      alert('X wins!');
-      reset();
-    }
-
-    if (checkWinO()) {
-      alert('O wins!');
-      reset();
-    }
-  }
-
-  if (currentTurn == 'O') {
+  } else if (currentTurn === 'O') {
     position[event.target.id] = 2;
-    move = document.getElementById(event.target.id);
-    move.setAttribute('src', 'img/o.jpeg');
-    currentTurn = 'X';
-
-    if (checkWinO) {
+    var moveO = document.getElementById(event.target.id);
+    moveO.setAttribute('src', 'images/o.png');
+    console.log(moveO);
+    
+    if (checkWinO(position)) {
       alert('O wins!');
       reset();
     }
 
-    if (checkWinX) {
+    if (checkWinX(position)) {
       alert('X wins!');
       reset();
     }
+
+    currentTurn = 'X';
   }
+
+  console.log(position);
 }
 
 function reset() {
@@ -137,8 +147,7 @@ function reset() {
 }
 
 var hamburger = document.getElementById('hamburger');
-hamburger.setAttribute('content', 'hidden');
-hamburger.addEventListener('hover', handleHover);
+hamburger.addEventListener('click', handleHover);
 
 function handleHover(event) {
   var navmenu = document.getElementById('navMenu');
