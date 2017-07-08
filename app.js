@@ -97,7 +97,8 @@ function handleTurn(event) {
     console.log('event.target.id = ' + event.target.id);
     console.log('value of move = ' + position[event.target.id]);
     var moveX = document.getElementById(event.target.id);
-    moveX.setAttribute('src', 'img/x.jpeg');
+    moveX.setAttribute('src', 'images/x.png');
+    console.log(moveX);
 
     if (checkWinX(position)) {
       alert('X wins!');
@@ -113,8 +114,9 @@ function handleTurn(event) {
   } else if (currentTurn === 'O') {
     position[event.target.id] = 2;
     var moveO = document.getElementById(event.target.id);
-    moveO.setAttribute('src', 'img/o.jpeg');
-
+    moveO.setAttribute('src', 'images/o.png');
+    console.log(moveO);
+    
     if (checkWinO(position)) {
       alert('O wins!');
       reset();
