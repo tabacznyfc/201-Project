@@ -5,81 +5,81 @@ for (var i = 0; i < 9; i++) {
   position.push(0);
 }
 
-function checkWinX(position) {
-  if (position[0] == 1 &&
-      position[1] == 1 &&
-      position[2] == 1 ||
+function checkWinX(x) {
+  if (position[0] == x &&
+      position[1] == x &&
+      position[2] == x ||
 
-      position[3] == 1 &&
-      position[4] == 1 &&
-      position[5] == 1 ||
+      position[3] == x &&
+      position[4] == x &&
+      position[5] == x ||
 
-      position[6] == 1 &&
-      position[7] == 1 &&
-      position[8] == 1 ||
+      position[6] == x &&
+      position[7] == x &&
+      position[8] == x ||
 
-      position[0] == 1 &&
-      position[3] == 1 &&
-      position[6] == 1 ||
+      position[0] == x &&
+      position[3] == x &&
+      position[6] == x ||
 
-      position[1] == 1 &&
-      position[4] == 1 &&
-      position[7] == 1 ||
+      position[1] == x &&
+      position[4] == x &&
+      position[7] == x ||
 
-      position[2] == 1 &&
-      position[5] == 1 &&
-      position[8] == 1 ||
+      position[2] == x &&
+      position[5] == x &&
+      position[8] == x ||
 
-      position[0] == 1 &&
-      position[4] == 1 &&
-      position[8] == 1 ||
+      position[0] == x &&
+      position[4] == x &&
+      position[8] == x ||
 
-      position[2] == 1 &&
-      position[4] == 1 &&
-      position[6] == 1) {
+      position[2] == x &&
+      position[4] == x &&
+      position[6] == x) {
     return true;
   } else {
     return false;
   }
 }
 
-function checkWinO(position) {
-  if (position[0] == 2 &&
-      position[1] == 2 &&
-      position[2] == 2 |
-
-      position[3] == 2 &&
-      position[4] == 2 &&
-      position[5] == 2 ||
-
-      position[6] == 2 &&
-      position[7] == 2 &&
-      position[8] == 2 ||
-
-      position[0] == 2 &&
-      position[3] == 2 &&
-      position[6] == 2 ||
-
-      position[1] == 2 &&
-      position[4] == 2 &&
-      position[7] == 2 ||
-
-      position[2] == 2 &&
-      position[5] == 2 &&
-      position[8] == 2 ||
-
-      position[0] == 2 &&
-      position[4] == 2 &&
-      position[8] == 2 ||
-
-      position[2] == 2 &&
-      position[4] == 2 &&
-      position[6] == 2) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function checkWinO(position) {
+//   if (position[0] == 2 &&
+//       position[1] == 2 &&
+//       position[2] == 2 |
+//
+//       position[3] == 2 &&
+//       position[4] == 2 &&
+//       position[5] == 2 ||
+//
+//       position[6] == 2 &&
+//       position[7] == 2 &&
+//       position[8] == 2 ||
+//
+//       position[0] == 2 &&
+//       position[3] == 2 &&
+//       position[6] == 2 ||
+//
+//       position[1] == 2 &&
+//       position[4] == 2 &&
+//       position[7] == 2 ||
+//
+//       position[2] == 2 &&
+//       position[5] == 2 &&
+//       position[8] == 2 ||
+//
+//       position[0] == 2 &&
+//       position[4] == 2 &&
+//       position[8] == 2 ||
+//
+//       position[2] == 2 &&
+//       position[4] == 2 &&
+//       position[6] == 2) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 for (var i = 0; i < 9; i++) {
   var imgIds = [];
@@ -94,7 +94,7 @@ function hadleTurn(event) {
     move.setAttribute('src', 'img/x.jpeg');
     currentTurn = 'O';
 
-    if (checkWinX()) {
+    if (checkWin()) {
       alert('X wins!');
       reset();
     }
@@ -111,12 +111,12 @@ function hadleTurn(event) {
     move.setAttribute('src', 'img/o.jpeg');
     currentTurn = 'X';
 
-    if (checkWinO) {
+    if (checkWin(2)) {
       alert('O wins!');
       reset();
     }
 
-    if (checkWinX) {
+    if (checkWin(1)) {
       alert('X wins!');
       reset();
     }
@@ -132,7 +132,7 @@ function reset() {
   for (i = 0; i < 9; i++) {
     var imgIds = [];
     imgIds[i] = document.getElementById(i);
-    imgIds[i].setAttribute('src', 'img/blank.jpeg');
+    imgIds[i].setAttribute('src', '');
   }
 }
 
@@ -143,6 +143,4 @@ hamburger.addEventListener('hover', handleHover);
 function handleHover(event) {
   var navmenu = document.getElementById('navMenu');
   navmenu.setAttribute('display', 'block');
-
-  //visibility hidden?
 }
