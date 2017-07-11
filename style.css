@@ -5,6 +5,13 @@ body {
 }
 
 
+#navMenu {
+  display: none;
+  position: fixed;
+}
+
+
+
 
 .flex-container {
   display: flex;
