@@ -5,12 +5,16 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
     <title>Best Tic Tac Toe</title>
-    <img src="images/hamburger.png" id="hamburger" alt="menu">
-    <ul id="navMenu">
-      <li>Home</li>
-      <li>Game</li>
-      <li>About Us</li>
-    </ul>
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">Home</a>
+    <a href="#">VS Human</a>
+    <a href="#">VS CPU</a>
+    <a href="#">About Us</a>
+  </div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
   </head>
   <body>
     <h1>Best Tic Tac Toe</h1>
