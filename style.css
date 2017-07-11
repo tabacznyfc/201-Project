@@ -34,14 +34,62 @@ body {
   height: 316px;
   margin: 5px;
   background-color: #B0E1ED;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
 }
 
-#flex-border{
-  width: 948px;
-  height: 100%;
-  border-color: #B0E1ED;  
+.player-container {
+  display: flex;
+  align-items: center;
+  height: 326px;
+  max-width: 978px;
+  width: 90%;
+  /*background-color: #F16949;*/
+  align-items: center;
+  justify-content: center;
 }
+
+#player1Box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 316px;
+  max-width: 316px;
+  min-width: 279px;
+  background-color: #B0E1ED;
+  margin-right: 15%;
+}
+
+#player2Box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 316px;
+  max-width: 316px;
+  min-width: 279px;
+  background-color: #B0E1ED;
+  margin-left: 15%;
+}
+
+#player1Name, #player2Name {
+  color: black;
+  font-size: 35px;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+#player1Score, #player2Score {
+  color: black;
+  align-self: flex-end;
+  padding-left: 100px;
+}
+
+#player1Side, #player2Side {
+  color: black;
+  font-size: 80px;
+}
+
 
 .overlay {
     height: 0%;
