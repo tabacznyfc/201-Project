@@ -1,4 +1,6 @@
 var currentTurn = 'X';
+var player1 = ['player1', 0, 'X'];
+var player2 = ['player2', 0, 'O'];
 
 var position = [];
 for (var i = 0; i < 9; i++) {
@@ -51,15 +53,10 @@ for (var i = 0; i < 9; i++) {
 
 function addUp() {
   var total = 0;
-  total += position[0];
-  total += position[1];
-  total += position[2];
-  total += position[3];
-  total += position[4];
-  total += position[5];
-  total += position[6];
-  total += position[7];
-  total += position[8];
+  for (var i = 0; i < 9; i++) {
+    total += position[i];
+  }
+
   return total;
 }
 
@@ -68,14 +65,14 @@ function isTie() {
   console.log('total = ' + total);
   if (total >= 13) {
     alert('It\'s a tie!');
+    switchSides();
     reset();
   }
 }
 
 function handleTurn(event) {
   console.log(currentTurn + '\'s turn.');
-  if (position[event.target.id] === 1 ||
-      position[event.target.id] === 2) {
+  if (position[event.target.id] == true) {
     return;
 
   } else if (currentTurn === 'X') {
@@ -93,21 +90,43 @@ function handleTurn(event) {
   }
 
   if (checkWin(1)) {
-    window.setTimeout(alert('X wins!'), 100);
+    if (player1[2] === 'X') {
+      player1[1]++;
+      alert(player1[2] + ' wins!');
+    } else {
+      player2[1]++;
+      alert(player1[2] + ' wins!');
+    }
+
+    switchSides();
     reset();
   }
 
   if (checkWin(2)) {
-    window.setTimeout(alert('O wins!'), 100);
+    if (player1[2] === 'O') {
+      player1[1]++;
+      alert(player1[2] + ' wins!');
+    } else {
+      player2[1]++;
+      alert(player2[2] + ' wins!');
+    }
+
+    switchSides();
     reset();
   }
+
+  var score1 = document.getElementById('player1Score');
+  var score2 = document.getElementById('player2Score');
+  score1.textContent(player1[1]);
+  score2.textContent(player2[1]);
+  console.log(player1[0] + '\'s score: ' + player1[1]);
+  console.log(player2[0] + '\'s score: ' + player2[1]);
 
   isTie();
 }
 
 function reset() {
   position = [];
-  player = 'X';
   for (var i = 0; i < 9; i++) {
     position.push(0);
   }
@@ -119,8 +138,35 @@ function reset() {
   }
 }
 
+function switchSides() {
+  if (player1[2] == 'X') {
+    player1[2] = 'O';
+    player2[2] = 'X';
+  }  else {
+    player1[2] = 'X';
+    player2[2] = 'O';
+  }
+
+  var player1Side = document.getElementById('player2Side');
+  var player2Side = document.getElementById('player2Side');
+  player1Side.textContent(player1[2]);
+  player2Side.textContent(player2[2]);
+}
+
+var box = [];
+box[0] = document.getElementById('player1Box');
+box[1] = document.getElementById('player2Box');
+box[0].addEventListener('click', handlePlayerName(player1[0], 'player1Name'));
+box[1].addEventListener('click', handlePlayerName(player2[0], 'player2Name'));
+
+function handlePlayerName(player, id) {
+  player = prompt('Type your name!');
+  var name = document.getElementById(id);
+  name.textContent(player);
+}
+
 function openNav() {
-  document.getElementById('myNav').style.height = '100%';
+  document.getElementById('myNav').style.height = ' 100%';
 }
 
 function closeNav() {
@@ -130,5 +176,4 @@ function closeNav() {
 function handleHover(event) {
   var navmenu = document.getElementById('navMenu');
   navmenu.setAttribute('display', 'block');
-
 }
