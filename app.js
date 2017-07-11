@@ -135,14 +135,10 @@ function reset() {
     imgIds[i].setAttribute('src', 'img/blank.jpeg');
   }
 }
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
 
-var hamburger = document.getElementById('hamburger');
-hamburger.setAttribute('content', 'hidden');
-hamburger.addEventListener('hover', handleHover);
-
-function handleHover(event) {
-  var navmenu = document.getElementById('navMenu');
-  navmenu.setAttribute('display', 'block');
-
-  //visibility hidden?
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
 }
