@@ -118,15 +118,14 @@ function reset() {
     imgIds[i].setAttribute('src', '');
   }
 }
+
 function openNav() {
-    document.getElementById("myNav").style.height = "100%";
+  document.getElementById('myNav').style.height = '100%';
 }
 
 function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-
-var hamburger = document.getElementById('hamburger');
-hamburger.addEventListener('click', handleHover);
+  document.getElementById('myNav').style.height = '0%';
+}
 
 function handleHover(event) {
   var navmenu = document.getElementById('navMenu');
