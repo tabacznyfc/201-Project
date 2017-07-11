@@ -118,6 +118,12 @@ function reset() {
     imgIds[i].setAttribute('src', '');
   }
 }
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
 
 var hamburger = document.getElementById('hamburger');
 hamburger.addEventListener('click', handleHover);
@@ -125,4 +131,5 @@ hamburger.addEventListener('click', handleHover);
 function handleHover(event) {
   var navmenu = document.getElementById('navMenu');
   navmenu.setAttribute('display', 'block');
+
 }
