@@ -46,7 +46,7 @@ function checkWin(x) {
 for (var i = 0; i < 9; i++) {
   var imgIds = [];
   imgIds[i] = document.getElementById(i);
-  imgIds[i].addEventListener('click', handleTurn);
+//  imgIds[i].addEventListener('click', handleTurn);
 }
 
 function addUp() {
@@ -124,7 +124,7 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("myNav").style.height = "0%";
-
+}
 function openNav() {
   document.getElementById('myNav').style.height = '100%';
 }
