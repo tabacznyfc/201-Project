@@ -1,13 +1,12 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #11262E;
+  background-color: black;
   color: white;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
-
 
 #navMenu {
   display: none;
@@ -216,6 +215,52 @@ h3 {
   }
 }
 
+button {
+   border-top: 1px solid #96d1f8;
+   background: #cc782f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#31698f), to(#cc782f));
+   background: -webkit-linear-gradient(top, #31698f, #cc782f);
+   background: -moz-linear-gradient(top, #31698f, #cc782f);
+   background: -ms-linear-gradient(top, #31698f, #cc782f);
+   background: -o-linear-gradient(top, #31698f, #cc782f);
+   padding: 14.5px 29px;
+   -webkit-border-radius: 14px;
+   -moz-border-radius: 14px;
+   border-radius: 14px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+button:active {
+   border-top-color: #1480c9;
+   background: #1480c9;
+   }
+#welcome {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 22px;
+  color: white;
+}
+
+#menu-bar {
+padding-right: 90%;
+
+}
+
+a:visited {
+    color: white;
+}
+
 .overlay {
     height: 0%;
     width: 100%;
@@ -321,3 +366,4 @@ h3 {
    {
      box-shadow: inset 0 0 0 5px #53a7ea;
    }
+
