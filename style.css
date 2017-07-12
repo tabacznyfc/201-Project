@@ -34,13 +34,85 @@ body {
   height: 316px;
   margin: 5px;
   background-color: #B0E1ED;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
 }
 
-#flex-border{
-  width: 948px;
-  height: 100%;
-  border-color: #B0E1ED;  
+.player-container {
+  display: flex;
+  align-items: center;
+  height: 326px;
+  max-width: 978px;
+  width: 90%;
+  /*background-color: #F16949;*/
+  align-items: center;
+  justify-content: center;
+}
+
+#player1Box {
+  display: flex;
+  align-items: center;
+  /*justify-content: space-around;*/
+  flex-direction: column;
+  height: 160px;
+  /*max-width: 316px;*/
+  min-width: 200px;
+  background-color: #B0E1ED;
+  margin-right: 10%;
+}
+
+#player2Box {
+  display: flex;
+  align-items: center;
+  /*justify-content: space-around;*/
+  flex-direction: column;
+  height: 160px;
+  min-height: 120px;
+  /*max-width: 316px;*/
+  min-width: 200px;
+  background-color: #B0E1ED;
+  margin-left: 10%;
+}
+
+#player2Box, #player1Box {
+  align-self: flex-start;
+  margin-top: 5%;
+}
+
+#player1Name, #player2Name {
+  color: black;
+  font-size: 35px;
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#player1Score, #player2Score {
+  color: black;
+  align-self: flex-end;
+  padding-left: 75px;
+}
+
+#player1Side, #player2Side {
+  color: black;
+  font-size: 80px;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+#player1Side {
+  align-self: flex-end;
+  margin-right: 5px;
+}
+
+#player2Side {
+  align-self: flex-start;
+  margin-left: 5px;
+}
+
+h3 {
+  display: flex;
+  align-self: flex-start;
 }
 
 .overlay {

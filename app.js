@@ -143,6 +143,7 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("myNav").style.height = "0%";
+}
 
 function switchSides() {
   if (player1[2] == 'X') {
