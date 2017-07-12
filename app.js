@@ -137,6 +137,12 @@ function reset() {
     imgIds[i].setAttribute('src', '');
   }
 }
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
 
 function switchSides() {
   if (player1[2] == 'X') {
