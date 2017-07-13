@@ -84,10 +84,20 @@ body {
   margin-right: 10px;
 }
 
+input[type="text"] {
+  font-size: 20px;
+  width: 100px;
+  background-color: #B0E1ED;
+  font-weight: bold;
+  border: 0;
+}
+
+
 #player1Score, #player2Score {
   color: black;
   align-self: flex-end;
-  padding-left: 75px;
+  justify-content: space-around;
+  padding-left: 40px;
 }
 
 #player1Side, #player2Side {
