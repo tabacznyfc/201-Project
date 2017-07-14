@@ -311,22 +311,21 @@ a:visited {
 /* About Page CSS */
 
 #about {
-    float: left
+    float: left;
 }
 
 .bio {
   height: 200px;
-  min-h/eight: 50%;
   width: 400px;
-  min-w/idth: 50%;
   padding: 5px;
   background-color: #B0E1ED;
   border-radius: 10px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  margin: 10px 50px 10px 50px;
+  margin: 10px;
   display: flex;
   opacity:0.5;
+
 }
 
 .bio p {
@@ -344,28 +343,37 @@ a:visited {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
   color: #F0684D;
-}
 
+}
+#about h2 {
+  margin-bottom: 28px;
+
+}
 #people {
   display: inline-flex;
   margin: 10px;
   flex-shrink: 2;
 }
 
-#about img {
-     width: 150px;
-     max-width: 150px;
-     min-width: 150px;
-     height: 175px;
-     max-height: 175px;
-     min-height: 175px;
-     margin: 10px;
-   }
+#name {
+  display: block;
+  margin-top: -30px;
+}
 
-   img:hover
-   {
-     box-shadow: inset 0 0 0 5px #53a7ea;
-   }
+#about img {
+  width: 150px;
+  max-width: 150px;
+  min-width: 150px;
+  height: 175px;
+  max-height: 175px;
+  min-height: 175px;
+  margin-top: -20px;
+}
+
+#about img:hover
+ {
+   box-shadow: inset 0 0 0 5px #53a7ea;
+ }
 
 #homebody {
   background-color: black;
