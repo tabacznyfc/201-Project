@@ -48,7 +48,7 @@ function checkWin(x) {
 for (var i = 0; i < 9; i++) {
   var imgIds = [];
   imgIds[i] = document.getElementById(i);
-  imgIds[i].addEventListener('click', handleTurn);
+//  imgIds[i].addEventListener('click', handleTurn);
 }
 
 function addUp() {
@@ -140,14 +140,6 @@ function reset() {
   }
 }
 
-function openNav() {
-  document.getElementById('myNav').style.height = '100%';
-}
-
-function closeNav() {
-  document.getElementById('myNav').style.height = '0%';
-}
-
 function switchSides() {
   if (player1[2] == 'X') {
     player1[2] = 'O';
@@ -162,24 +154,6 @@ function switchSides() {
   player1Side.textContent = player1[2];
   player2Side.textContent = player2[2];
 }
-
-// var box = [];
-// box[0] = document.getElementById('player1Box');
-// box[1] = document.getElementById('player2Box');
-// box[0].addEventListener('click', handlePlayerName('player1Box'));
-// box[1].addEventListener('click', handlePlayerName('player2Box'));
-// var name1 = document.getElementById('player1Name');
-// var name2 = document.getElementById('player2Name');
-//
-// function handlePlayerName(id) {
-//   if (id === 'player1Box') {
-//     name1.textContent = prompt('Type your name!');
-//   }
-//
-//   if (id === 'player2Box') {
-//     name2.textContent = prompt('Type your name!');
-//   }
-// }
 
 function openNav() {
   document.getElementById('myNav').style.height = ' 100%';
