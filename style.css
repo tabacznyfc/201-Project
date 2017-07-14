@@ -17,7 +17,6 @@ img {
   position: fixed;
 }
 
-
 .flex-container {
   display: flex;
   align-items: center;
@@ -35,6 +34,7 @@ img {
   height: 316px;
   margin: 5px;
   background-color: #B0E1ED;
+
 }
 
 .player-container {
@@ -169,4 +169,160 @@ p {
     top: 15px;
     right: 35px;
   }
+}
+
+button {
+   border-top: 1px solid #96d1f8;
+   background: #cc782f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#31698f), to(#cc782f));
+   background: -webkit-linear-gradient(top, #31698f, #cc782f);
+   background: -moz-linear-gradient(top, #31698f, #cc782f);
+   background: -ms-linear-gradient(top, #31698f, #cc782f);
+   background: -o-linear-gradient(top, #31698f, #cc782f);
+   padding: 14.5px 29px;
+   -webkit-border-radius: 14px;
+   -moz-border-radius: 14px;
+   border-radius: 14px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+button:active {
+   border-top-color: #1480c9;
+   background: #1480c9;
+   }
+#welcome {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 22px;
+  color: white;
+}
+
+#menu-bar {
+padding-right: 90%;
+
+}
+
+a:visited {
+    color: white;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* About Page CSS */
+
+#about {
+    float: left
+}
+
+.bio {
+  height: 200px;
+  min-h/eight: 50%;
+  width: 400px;
+  min-w/idth: 50%;
+  padding: 5px;
+  background-color: #B0E1ED;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  margin: 10px 50px 10px 50px;
+  display: flex;
+  opacity:0.5;
+}
+
+.bio p {
+  font-size: 20px;
+  color: white;
+}
+
+.bio:hover
+{
+  box-shadow: inset 0 0 0 5px #53a7ea;
+  opacity:1;
+}
+
+.bio, #about h1, #about h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  color: #F0684D;
+}
+
+#people {
+  display: inline-flex;
+  margin: 10px;
+  flex-shrink: 2;
+}
+
+#about img {
+     width: 150px;
+     max-width: 150px;
+     min-width: 150px;
+     height: 175px;
+     max-height: 175px;
+     min-height: 175px;
+     margin: 10px;
+   }
+
+   img:hover
+   {
+     box-shadow: inset 0 0 0 5px #53a7ea;
+   }
+
+#homebody {
+  background-color: black;
 }
