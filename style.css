@@ -40,7 +40,6 @@ body {
   height: 326px;
   max-width: 978px;
   width: 90%;
-  /*background-color: #F16949;*/
   align-items: center;
   justify-content: center;
 }
@@ -48,10 +47,8 @@ body {
 #player1Box {
   display: flex;
   align-items: center;
-  /*justify-content: space-around;*/
   flex-direction: column;
   height: 160px;
-  /*max-width: 316px;*/
   min-width: 200px;
   background-color: #B0E1ED;
   margin-right: 10%;
@@ -60,11 +57,9 @@ body {
 #player2Box {
   display: flex;
   align-items: center;
-  /*justify-content: space-around;*/
   flex-direction: column;
   height: 160px;
   min-height: 120px;
-  /*max-width: 316px;*/
   min-width: 200px;
   background-color: #B0E1ED;
   margin-left: 10%;
@@ -121,7 +116,7 @@ p {
   display: flex;
   align-self: flex-start;
   justify-content: center;
-  font-size: 23px;
+  font-size: 21px;
 }
  br {
    line-height: 3em;
