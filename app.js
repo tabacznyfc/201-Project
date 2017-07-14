@@ -62,13 +62,15 @@ function addUp() {
 
 function isTie() {
   var total = addUp();
-  console.log('total = ' + total);
   if (total >= 13) {
     alert('It\'s a tie!');
     switchSides();
     reset();
   }
 }
+
+var score1 = document.getElementById('player1Score');
+var score2 = document.getElementById('player2Score');
 
 function handleTurn(event) {
   console.log(currentTurn + '\'s turn.');
@@ -92,33 +94,33 @@ function handleTurn(event) {
   if (checkWin(1)) {
     if (player1[2] === 'X') {
       player1[1]++;
-      alert(player1[2] + ' wins!');
+      currentTurn = 'X';
+      alert(player1[0] + ' wins!');
     } else {
       player2[1]++;
-      alert(player1[2] + ' wins!');
+      currentTurn = 'X';
+      alert(player2[0] + ' wins!');
     }
 
     switchSides();
     reset();
-  }
-
-  if (checkWin(2)) {
+  }  else if (checkWin(2)) {
     if (player1[2] === 'O') {
       player1[1]++;
-      alert(player1[2] + ' wins!');
+      currentTurn = 'X';
+      alert(player1[0] + ' wins!');
     } else {
       player2[1]++;
-      alert(player2[2] + ' wins!');
+      currentTurn = 'X';
+      alert(player2[0] + ' wins!');
     }
 
     switchSides();
     reset();
   }
 
-  var score1 = document.getElementById('player1Score');
-  var score2 = document.getElementById('player2Score');
-  score1.textContent(player1[1]);
-  score2.textContent(player2[1]);
+  score1.textContent = player1[1];
+  score2.textContent = player2[1];
   console.log(player1[0] + '\'s score: ' + player1[1]);
   console.log(player2[0] + '\'s score: ' + player2[1]);
 
@@ -137,12 +139,13 @@ function reset() {
     imgIds[i].setAttribute('src', '');
   }
 }
+
 function openNav() {
-    document.getElementById("myNav").style.height = "100%";
+  document.getElementById('myNav').style.height = '100%';
 }
 
 function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
+  document.getElementById('myNav').style.height = '0%';
 }
 
 function switchSides() {
@@ -154,23 +157,29 @@ function switchSides() {
     player2[2] = 'O';
   }
 
-  var player1Side = document.getElementById('player2Side');
+  var player1Side = document.getElementById('player1Side');
   var player2Side = document.getElementById('player2Side');
-  player1Side.textContent(player1[2]);
-  player2Side.textContent(player2[2]);
+  player1Side.textContent = player1[2];
+  player2Side.textContent = player2[2];
 }
 
-var box = [];
-box[0] = document.getElementById('player1Box');
-box[1] = document.getElementById('player2Box');
-box[0].addEventListener('click', handlePlayerName(player1[0], 'player1Name'));
-box[1].addEventListener('click', handlePlayerName(player2[0], 'player2Name'));
-
-function handlePlayerName(player, id) {
-  player = prompt('Type your name!');
-  var name = document.getElementById(id);
-  name.textContent(player);
-}
+// var box = [];
+// box[0] = document.getElementById('player1Box');
+// box[1] = document.getElementById('player2Box');
+// box[0].addEventListener('click', handlePlayerName('player1Box'));
+// box[1].addEventListener('click', handlePlayerName('player2Box'));
+// var name1 = document.getElementById('player1Name');
+// var name2 = document.getElementById('player2Name');
+//
+// function handlePlayerName(id) {
+//   if (id === 'player1Box') {
+//     name1.textContent = prompt('Type your name!');
+//   }
+//
+//   if (id === 'player2Box') {
+//     name2.textContent = prompt('Type your name!');
+//   }
+// }
 
 function openNav() {
   document.getElementById('myNav').style.height = ' 100%';
