@@ -140,10 +140,6 @@ function reset() {
   }
 }
 
-<<<<<<< HEAD
-function closeNav() {
-  document.getElementById('myNav').style.height = '0%';
-=======
 function switchSides() {
   if (player1[2] == 'X') {
     player1[2] = 'O';
@@ -157,7 +153,6 @@ function switchSides() {
   var player2Side = document.getElementById('player2Side');
   player1Side.textContent = player1[2];
   player2Side.textContent = player2[2];
->>>>>>> c2352a142350324c146294e2fd5fba6eea20f4bd
 }
 
 function openNav() {
