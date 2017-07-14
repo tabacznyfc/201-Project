@@ -153,7 +153,7 @@ function switchSides() {
   var player2Side = document.getElementById('player2Side');
   player1Side.textContent = player1[2];
   player2Side.textContent = player2[2];
-}
+
 
 function openNav() {
   document.getElementById('myNav').style.height = ' 100%';
