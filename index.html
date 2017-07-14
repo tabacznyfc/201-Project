@@ -10,8 +10,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
     <a href="homepage.html">Home</a>
-    <a href="index.html">VS Human</a>
-    <a href="#">VS CPU</a>
+    <a href="index.html">Game</a>
     <a href="about-us.html">About Us</a>
   </div>
 </div>
@@ -37,14 +36,22 @@
   </div>
   <div class="player-container">
     <div id="player1Box">
-      <div id="player1Name">Player 1 <span id="player1Score">0</span></div>
+      <div id="player1Name">
+        <form class="player2Name">
+          <input type="text" name="" value="" placeholder="Player 1">
+          <span id="player1Score">0</span>
+        </form>
+      </div>
       <div id="player1Side">X</div>
     </div>
-    <h3>Pick a box, you are either 'X' or 'O'.<br />
-    3 in a row wins.</h3>
-
+    <p>Pick a box, you are either 'X' or 'O'. &ensp; 3 in a row wins.<br /> To change your name, click on either 'Player 1' or 'Player 2' and type in your name.</p>
     <div id="player2Box">
-      <div id="player2Name">Player 2 <span id="player2Score">0</span></div>
+      <div id="player2Name">
+      <form class="player2Name">
+        <input type="text" name="" value="" placeholder="Player 2">
+        <span id="player2Score">0</span>
+      </form>
+      </div>
       <div id="player2Side">O</div>
     </div>
 </div>
