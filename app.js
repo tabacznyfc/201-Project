@@ -1,4 +1,6 @@
 var currentTurn = 'X';
+var player1 = ['player1', 0, 'X'];
+var player2 = ['player2', 0, 'O'];
 
 var position = [];
 for (var i = 0; i < 9; i++) {
@@ -46,36 +48,33 @@ function checkWin(x) {
 for (var i = 0; i < 9; i++) {
   var imgIds = [];
   imgIds[i] = document.getElementById(i);
-//  imgIds[i].addEventListener('click', handleTurn);
+  imgIds[i].addEventListener('click', handleTurn);
 }
 
 function addUp() {
   var total = 0;
-  total += position[0];
-  total += position[1];
-  total += position[2];
-  total += position[3];
-  total += position[4];
-  total += position[5];
-  total += position[6];
-  total += position[7];
-  total += position[8];
+  for (var i = 0; i < 9; i++) {
+    total += position[i];
+  }
+
   return total;
 }
 
 function isTie() {
   var total = addUp();
-  console.log('total = ' + total);
   if (total >= 13) {
     alert('It\'s a tie!');
+    switchSides();
     reset();
   }
 }
 
+var score1 = document.getElementById('player1Score');
+var score2 = document.getElementById('player2Score');
+
 function handleTurn(event) {
   console.log(currentTurn + '\'s turn.');
-  if (position[event.target.id] === 1 ||
-      position[event.target.id] === 2) {
+  if (position[event.target.id] == true) {
     return;
 
   } else if (currentTurn === 'X') {
@@ -93,21 +92,43 @@ function handleTurn(event) {
   }
 
   if (checkWin(1)) {
-    window.setTimeout(alert('X wins!'), 100);
+    if (player1[2] === 'X') {
+      player1[1]++;
+      currentTurn = 'X';
+      alert(player1[0] + ' wins!');
+    } else {
+      player2[1]++;
+      currentTurn = 'X';
+      alert(player2[0] + ' wins!');
+    }
+
+    switchSides();
+    reset();
+  }  else if (checkWin(2)) {
+    if (player1[2] === 'O') {
+      player1[1]++;
+      currentTurn = 'X';
+      alert(player1[0] + ' wins!');
+    } else {
+      player2[1]++;
+      currentTurn = 'X';
+      alert(player2[0] + ' wins!');
+    }
+
+    switchSides();
     reset();
   }
 
-  if (checkWin(2)) {
-    window.setTimeout(alert('O wins!'), 100);
-    reset();
-  }
+  score1.textContent = player1[1];
+  score2.textContent = player2[1];
+  console.log(player1[0] + '\'s score: ' + player1[1]);
+  console.log(player2[0] + '\'s score: ' + player2[1]);
 
   isTie();
 }
 
 function reset() {
   position = [];
-  player = 'X';
   for (var i = 0; i < 9; i++) {
     position.push(0);
   }
@@ -118,16 +139,29 @@ function reset() {
     imgIds[i].setAttribute('src', '');
   }
 }
-function openNav() {
-  document.getElementById('myNav').style.height = '100%';
-}
 
+<<<<<<< HEAD
 function closeNav() {
   document.getElementById('myNav').style.height = '0%';
+=======
+function switchSides() {
+  if (player1[2] == 'X') {
+    player1[2] = 'O';
+    player2[2] = 'X';
+  }  else {
+    player1[2] = 'X';
+    player2[2] = 'O';
+  }
+
+  var player1Side = document.getElementById('player1Side');
+  var player2Side = document.getElementById('player2Side');
+  player1Side.textContent = player1[2];
+  player2Side.textContent = player2[2];
+>>>>>>> c2352a142350324c146294e2fd5fba6eea20f4bd
 }
 
 function openNav() {
-  document.getElementById('myNav').style.height = '100%';
+  document.getElementById('myNav').style.height = ' 100%';
 }
 
 function closeNav() {
@@ -137,5 +171,4 @@ function closeNav() {
 function handleHover(event) {
   var navmenu = document.getElementById('navMenu');
   navmenu.setAttribute('display', 'block');
-
 }
